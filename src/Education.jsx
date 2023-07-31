@@ -18,28 +18,25 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
   );
 }
 
-export default function Education() {
-
-  const [items, setItems] = useState([]);
+export default function Education({education, setEducation}) {
 
   function handleAddBtn() {
-    const item = {id: uuid(), data: {school: "", location: "", degree: "", date: ""}};
-    setItems([...items, item]);
+    const edu = {id: uuid(), data: {school: "", location: "", degree: "", date: ""}};
+    setEducation([...education, edu]);
   }
 
   function handleEditing(e) {
-    setItems(items.map(item => {
-      if (item.id === e.target.id) {
-        item.data[e.target.name] = e.target.value;
+    setEducation(education.map(edu => {
+      if (edu.id === e.target.id) {
+        edu.data[e.target.name] = e.target.value;
       }
-      return item;
+      return edu;
     }));
-    console.log(items);
   }
 
   function handleRemoveBtn(e) {
     const key = e.target.value;
-    setItems(items.filter(item => item.id !== key));
+    setEducation(education.filter(edu => edu.id !== key));
   }
 
   return (
@@ -49,7 +46,7 @@ export default function Education() {
         <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
       <ul className="education-list" >
-        {items.map(item => <Input key={item.id} curr={item} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
+        {education.map(edu => <Input key={edu.id} curr={edu} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
       </ul>
     </>
   );

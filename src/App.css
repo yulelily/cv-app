@@ -50,6 +50,23 @@ input:hover {
   border-bottom: solid 2px black;
 }
 
+.showPDF {
+  margin-bottom: 8px;
+}
+
+.PDF {
+  display: none;
+}
+
+.print {
+  display: none;
+
+  padding: 1in;
+  width: 6.5in;
+  height: 9in;
+  background-color: darkslategrey;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -19,28 +19,25 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
   );
 }
 
-export default function Experience() {
-
-  const [items, setItems] = useState([]);
+export default function Experience({experiences, setExperiences}) {
 
   function handleAddBtn() {
-    const item = {id: uuid(), data: {company: "", location: "", title: "", date: "", desc: ""}};
-    setItems([...items, item]);
+    const experience = {id: uuid(), data: {company: "", location: "", title: "", date: "", desc: ""}};
+    setExperiences([...experiences, experience]);
   }
 
   function handleEditing(e) {
-    setItems(items.map(item => {
-      if (item.id === e.target.id) {
-        item.data[e.target.name] = e.target.value;
+    setExperiences(experiences.map(experience => {
+      if (experience.id === e.target.id) {
+        experience.data[e.target.name] = e.target.value;
       }
-      return item;
+      return experience;
     }));
-    console.log(items);
   }
 
   function handleRemoveBtn(e) {
     const key = e.target.value;
-    setItems(items.filter(item => item.id !== key));
+    setExperiences(experiences.filter(experience => experience.id !== key));
   }
 
   return (
@@ -50,7 +47,7 @@ export default function Experience() {
         <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
       <ul className="experience-list" >
-        {items.map(item => <Input key={item.id} curr={item} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
+        {experiences.map(experience => <Input key={experience.id} curr={experience} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
       </ul>
     </>
   );

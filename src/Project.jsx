@@ -15,28 +15,25 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
   );
 }
 
-export default function Project() {
-
-  const [items, setItems] = useState([]);
+export default function Project({projects, setProjects}) {
 
   function handleAddBtn() {
-    const item = {id: uuid(), data: {title: "", desc: ""}};
-    setItems([...items, item]);
+    const project = {id: uuid(), data: {title: "", desc: ""}};
+    setProjects([...projects, project]);
   }
 
   function handleEditing(e) {
-    setItems(items.map(item => {
-      if (item.id === e.target.id) {
-        item.data[e.target.name] = e.target.value;
+    setProjects(projects.map(project => {
+      if (project.id === e.target.id) {
+        project.data[e.target.name] = e.target.value;
       }
-      return item;
+      return project;
     }));
-    console.log(items);
   }
 
   function handleRemoveBtn(e) {
     const key = e.target.value;
-    setItems(items.filter(item => item.id !== key));
+    setProjects(projects.filter(project => project.id !== key));
   }
 
   return (
@@ -46,7 +43,7 @@ export default function Project() {
         <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
       <ul className="project-list" >
-        {items.map(item => <Input key={item.id} curr={item} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
+        {projects.map(project => <Input key={project.id} curr={project} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
       </ul>
     </>
   );
