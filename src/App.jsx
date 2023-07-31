@@ -14,23 +14,24 @@ function Input({label, value}) {
   );
 }
 
-function handlePrinting() {
-  const resume = document.querySelector(".resume");
-  const opt = {
-    margin: 1,
-    filename: "my-resume.pdf",
-    image: {type: "jpeg", quality: 0.98},
-    enableLinks: true,
-    html2canvas: {scale: 1},
-    jsPDF: {unit: "in", format: "letter", orientation: "portrait"}
-  }
-  html2pdf().from(resume).set(opt).save();
-}
-
 export default function App() {
+
+  function handlePrinting() {
+    const resume = document.querySelector(".resume");
+    const opt = {
+      margin: 0,
+      filename: "my-resume.pdf",
+      image: {type: "jpeg", quality: 0.98},
+      enableLinks: true,
+      html2canvas: {scale: 1},
+      jsPDF: {unit: "in", format: "letter", orientation: "portrait"}
+    }
+    html2pdf().from(resume).set(opt).save();
+  }
+
   return (
-    <div className="body">
-      <button onClick={handlePrinting} >Save as PDF</button>
+    <>
+      <button className="html2pdf" onClick={handlePrinting} >Save as PDF</button>
       <div className="resume">
         <div>
           <Input label="Name" value="Jane Doe" />
@@ -44,6 +45,6 @@ export default function App() {
         <Experience />
         <Project />
       </div>
-    </div>
+    </>
   );
 }

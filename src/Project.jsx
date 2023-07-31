@@ -10,7 +10,7 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
         &nbsp;:&nbsp;
         <input id={curr.id} name="desc" placeholder="glued together every JavaScript framework together to create the ultimate web application art project." value={curr.desc} onChange={handleEditing} />
       </div>
-      <button value={curr.id} onClick={handleRemoveBtn} >🗑</button>
+      <div className="button"><button value={curr.id} onClick={handleRemoveBtn} >🗑</button></div>
     </li>
   );
 }
@@ -43,7 +43,7 @@ export default function Project() {
     <>
       <div>
         <h4>Projects</h4>
-        <button onClick={handleAddBtn} >+</button>
+        <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
       <ul className="project-list" >
         {items.map(item => <Input key={item.id} curr={item} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}

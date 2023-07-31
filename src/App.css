@@ -3,6 +3,51 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.resume {
+  padding: 1in;
+  width: 6.5in;
+  height: 9in;
+}
+
+.resume:hover {
+  outline: dashed 2px black;
+}
+
+h4,
+ul {
+  margin: 0;
+}
+
+.button {
+  padding: 4px;
+}
+
+.button > button {
+  display: none;
+}
+
+.button:hover > button,
+.button > button:hover {
+  display: inline-block;
+}
+
+input {
+  border: none;
+  outline: none;
+
+  color: inherit;
+  background: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:hover {
+  border-bottom: solid 2px black;
 }
 
 .logo {

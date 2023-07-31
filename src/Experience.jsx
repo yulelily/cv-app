@@ -14,7 +14,7 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
         <input id={curr.id} name="date" placeholder="June. 2025 - June. 2026" value={curr.date} onChange={handleEditing} />
       </div>
       <input id={curr.id} name="desc" placeholder="Description of my work here: accidentally rm -rf'd production database but recovered the lost data." value={curr.desc} onChange={handleEditing} ></input>
-      <button value={curr.id} onClick={handleRemoveBtn} >🗑</button>
+      <div className="button"><button value={curr.id} onClick={handleRemoveBtn} >🗑</button></div>
     </li>
   );
 }
@@ -47,7 +47,7 @@ export default function Experience() {
     <>
       <div>
         <h4>Experience</h4>
-        <button onClick={handleAddBtn} >+</button>
+        <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
       <ul className="experience-list" >
         {items.map(item => <Input key={item.id} curr={item} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}

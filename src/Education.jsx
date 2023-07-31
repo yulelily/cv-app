@@ -13,7 +13,7 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
         <input id={curr.id} name="degree" placeholder="Bachelor of Science in Computer Science; GPA: 4.00" value={curr.degree} onChange={handleEditing} />
         <input id={curr.id} name="date" placeholder="Aug. 2021 - June. 2025" value={curr.date} onChange={handleEditing} />
       </div>
-      <button value={curr.id} onClick={handleRemoveBtn} >🗑</button>
+      <div className="button"><button value={curr.id} onClick={handleRemoveBtn} >🗑</button></div>
     </li>
   );
 }
@@ -46,7 +46,7 @@ export default function Education() {
     <>
       <div>
         <h4>Education</h4>
-        <button onClick={handleAddBtn} >+</button>
+        <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
       <ul className="education-list" >
         {items.map(item => <Input key={item.id} curr={item} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
