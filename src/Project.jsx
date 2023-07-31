@@ -6,25 +6,21 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
   return (
     <li>
       <div>
-        <input id={curr.id} name="company" placeholder="Company of Technology and Innovation" value={curr.company} onChange={handleEditing} />
-        <input id={curr.id} name="location" placeholder="Somewhere, Somewhen" value={curr.location} onChange={handleEditing} />
+        <input id={curr.id} name="title" placeholder="Project of High Impact" value={curr.title} onChange={handleEditing} />
+        &nbsp;:&nbsp;
+        <input id={curr.id} name="desc" placeholder="glued together every JavaScript framework together to create the ultimate web application art project." value={curr.desc} onChange={handleEditing} />
       </div>
-      <div>
-        <input id={curr.id} name="title" placeholder="Software Engineer" value={curr.title} onChange={handleEditing} />
-        <input id={curr.id} name="date" placeholder="June. 2025 - June. 2026" value={curr.date} onChange={handleEditing} />
-      </div>
-      <input id={curr.id} name="desc" placeholder="Description of my work here: accidentally rm -rf'd production database but recovered the lost data." value={curr.desc} onChange={handleEditing} ></input>
       <button value={curr.id} onClick={handleRemoveBtn} >🗑</button>
     </li>
   );
 }
 
-export default function Experience() {
+export default function Project() {
 
   const [items, setItems] = useState([]);
 
   function handleAddBtn() {
-    const item = {id: uuid(), data: {company: "", location: "", title: "", date: "", desc: ""}};
+    const item = {id: uuid(), data: {title: "", desc: ""}};
     setItems([...items, item]);
   }
 
@@ -46,10 +42,10 @@ export default function Experience() {
   return (
     <>
       <div>
-        <h4>Experience</h4>
+        <h4>Projects</h4>
         <button onClick={handleAddBtn} >+</button>
       </div>
-      <ul className="experience-list" >
+      <ul className="project-list" >
         {items.map(item => <Input key={item.id} curr={item} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
       </ul>
     </>
