@@ -7,7 +7,7 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
       <div>
         <input id={curr.id} name="title" placeholder="Project of High Impact" value={curr.title} onChange={handleEditing} />
         &nbsp;:&nbsp;
-        <textarea id={curr.id} name="desc" placeholder="glued together every JavaScript framework together to create the ultimate web application art project." value={curr.desc} onChange={handleEditing}> </textarea>
+        <textarea id={curr.id} name="desc" placeholder="glued together every JavaScript framework together to create the ultimate web application art project." value={curr.desc} onChange={handleEditing}> </textarea>      
       </div>
       <div className="button"><button value={curr.id} onClick={handleRemoveBtn} >🗑</button></div>
     </div>

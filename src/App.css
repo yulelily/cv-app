@@ -12,6 +12,8 @@
   padding: 1in;
   width: 6.5in;
   height: 9in;
+
+  background-color: white;
 }
 
 .resume:hover {
@@ -46,11 +48,21 @@ input {
   font-size: inherit;
 }
 
-input:hover {
+textarea {
+  color: inherit;
+  background: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:hover,
+input:focus {
   border-bottom: solid 2px black;
 }
 
-.showPDF {
+.showPDF,
+.savePDF,
+.hidePDF {
   margin-bottom: 8px;
 }
 
@@ -67,21 +79,49 @@ input:hover {
   background-color: white;
 }
 
+input {
+  width: 3in;
+}
+
+textarea {
+  margin: 6px 0px;
+  width: 6.5in;
+  height: 5rem;
+}
+
+.proText,
+.expText {
+  text-align: left;
+}
+
 h4,
 .rGen > div,
 .section > p:first-child {
   text-align: start;
 }
 
+.section > p:first-child,
+h4 {
+  border-bottom: solid 1px black;
+}
+
 .general > div,
 .rGen > div,
 .list > div > div {
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .general > div:first-child > p:first-child,
 .list > div > div:first-child > p:first-child,
 .section > p:first-child {
   font-weight: 700;
+}
+
+.general > div > p,
+.list > div > div > p {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
 }

@@ -12,11 +12,11 @@ export default function General({general, setGeneral}) {
     <div className="rGen">
       <div>
         <input name="name" placeholder="Jane Doe" value={general.name} onChange={handleEditing} />
-        <label> Email: <input name="email" placeholder="janedoe@gmail.com" value={general.email} onChange={handleEditing} /> </label>
+        <input name="email" placeholder="janedoe@gmail.com" value={general.email} onChange={handleEditing} />
       </div>
       <div>
         <input name="url" placeholder="https://www.janedoe.com" value={general.url} onChange={handleEditing} />
-        <label> Mobile: <input name="tel" placeholder="+1-123-456-7890" value={general.tel} onChange={handleEditing} /> </label>
+        <input name="tel" placeholder="+1-123-456-7890" value={general.tel} onChange={handleEditing} />
       </div>
     </div>
   );

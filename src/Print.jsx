@@ -26,7 +26,7 @@ function ExpText({curr}) {
         <p>{curr.data.title} </p>
         <p>{curr.data.date} </p>
       </div>
-      <p>{curr.data.desc} </p>
+      <p className="expText" >{curr.data.desc} </p>
     </div>
   );
 }
@@ -34,11 +34,7 @@ function ExpText({curr}) {
 function ProText({curr}) {
   return (
     <div>
-      <div>
-        <p>{curr.data.title}</p>
-        <p>&nbsp;:&nbsp;</p>
-        <p>{curr.data.desc}</p>
-      </div>
+      <p className="proText" ><strong>{curr.data.title} : </strong>{curr.data.desc}</p>
     </div>
   );
 }
