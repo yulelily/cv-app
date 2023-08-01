@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { v4 as uuid } from 'uuid'
-import { useState } from 'react'
 
 function Input({curr, handleEditing, handleRemoveBtn}) {
   return (
@@ -13,7 +12,7 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
         <input id={curr.id} name="title" placeholder="Software Engineer" value={curr.title} onChange={handleEditing} />
         <input id={curr.id} name="date" placeholder="June. 2025 - June. 2026" value={curr.date} onChange={handleEditing} />
       </div>
-      <input id={curr.id} name="desc" placeholder="Description of my work here: accidentally rm -rf'd production database but recovered the lost data." value={curr.desc} onChange={handleEditing} ></input>
+      <textarea id={curr.id} name="desc" placeholder="Description of my work here: accidentally rm -rf'd production database but recovered the lost data." value={curr.desc} onChange={handleEditing} ></textarea>
       <div className="button"><button value={curr.id} onClick={handleRemoveBtn} >🗑</button></div>
     </li>
   );

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { v4 as uuid } from 'uuid'
-import { useState } from 'react'
 
 function Input({curr, handleEditing, handleRemoveBtn}) {
   return (
