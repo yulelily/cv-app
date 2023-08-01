@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid'
 
 function Input({curr, handleEditing, handleRemoveBtn}) {
   return (
-    <li>
+    <div>
       <div>
         <input id={curr.id} name="school" placeholder="School of Technology and Science" value={curr.school} onChange={handleEditing} />
         <input id={curr.id} name="location" placeholder="Somewhere, Somewhen" value={curr.location} onChange={handleEditing} />
@@ -13,7 +13,7 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
         <input id={curr.id} name="date" placeholder="Aug. 2021 - June. 2025" value={curr.date} onChange={handleEditing} />
       </div>
       <div className="button"><button value={curr.id} onClick={handleRemoveBtn} >🗑</button></div>
-    </li>
+    </div>
   );
 }
 
@@ -44,9 +44,9 @@ export default function Education({education, setEducation}) {
         <h4>Education</h4>
         <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
-      <ul >
+      <div className="list" >
         {education.map(edu => <Input key={edu.id} curr={edu} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
-      </ul>
+      </div>
     </>
   );
 }

@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid'
 
 function Input({curr, handleEditing, handleRemoveBtn}) {
   return (
-    <li>
+    <div>
       <div>
         <input id={curr.id} name="company" placeholder="Company of Technology and Innovation" value={curr.company} onChange={handleEditing} />
         <input id={curr.id} name="location" placeholder="Somewhere, Somewhen" value={curr.location} onChange={handleEditing} />
@@ -14,7 +14,7 @@ function Input({curr, handleEditing, handleRemoveBtn}) {
       </div>
       <textarea id={curr.id} name="desc" placeholder="Description of my work here: accidentally rm -rf'd production database but recovered the lost data." value={curr.desc} onChange={handleEditing} ></textarea>
       <div className="button"><button value={curr.id} onClick={handleRemoveBtn} >🗑</button></div>
-    </li>
+    </div>
   );
 }
 
@@ -45,9 +45,9 @@ export default function Experience({experiences, setExperiences}) {
         <h4>Experience</h4>
         <div className="button"><button onClick={handleAddBtn} >+</button></div>
       </div>
-      <ul>
+      <div className="list" >
         {experiences.map(experience => <Input key={experience.id} curr={experience} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
-      </ul>
+      </div>
     </>
   );
 }

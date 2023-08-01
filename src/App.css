@@ -68,11 +68,13 @@ input:hover {
 }
 
 h4,
+.rGen > div,
 .section > p:first-child {
   text-align: start;
 }
 
 .general > div,
+.rGen > div,
 .list > div > div {
   justify-content: space-between;
   display: flex;
