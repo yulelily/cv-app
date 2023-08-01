@@ -66,6 +66,20 @@ input:focus {
   margin-bottom: 8px;
 }
 
+.linkGithub {
+  margin: 8px;
+  width: 1in;
+  background-color: #e2d3d3;
+  color: rgb(97, 97, 97);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: right;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 .PDF {
   display: none;
 }
