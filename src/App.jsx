@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
-import General from  './General.jsx'
-import Education from './Education.jsx'
-import Experience from './Experience.jsx'
-import Project from './Project.jsx'
+import General from  './components/General.jsx'
+import Education from './components/Education.jsx'
+import Experience from './components/Experience.jsx'
+import Project from './components/Project.jsx'
 import html2pdf from 'html2pdf.js'
-import Print from './Print.jsx'
-import './App.css'
+import Print from './components/Print.jsx'
+import './styles/App.css'
 
 
 export default function App() {
