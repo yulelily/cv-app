@@ -48,10 +48,9 @@ export default function App() {
     html2pdf().from(print).set(opt).save();
   }
 
-  function toggleVisibility(value) {
-    const headers = document.querySelectorAll(`.${value}`);
+  function toggleVisibility(e) {
+    const headers = document.querySelectorAll(`.${e.target.value}`);
     headers.forEach(header => {
-      console.log(header);
       header.style.display === "none" ? header.style.display = "block" : header.style.display = "none"
     });
   }
@@ -69,16 +68,16 @@ export default function App() {
       <div className="resume">
         <General general={general} setGeneral={setGeneral} />
         <Education education={education} setEducation={setEducation} />
-        <div className="button" value="eduHeader" >
-          <button onClick={(e) => toggleVisibility(e.target.getAttribute("value"))} >&#128065;</button>
+        <div className="button">
+          <button value="eduHeader" onClick={(e) => toggleVisibility(e)} >&#128065;</button>
         </div>
         <Experience experiences={experiences} setExperiences={setExperiences} />
-        <div className="button" value="expHeader" >
-          <button onClick={(e) => toggleVisibility(e.target.getAttribute("value"))} >&#128065;</button>
+        <div className="button">
+          <button value="expHeader" onClick={(e) => toggleVisibility(e)} >&#128065;</button>
         </div>
         <Project projects={projects} setProjects={setProjects} />
-        <div className="button" value="proHeader" >
-          <button onClick={(e) => toggleVisibility(e.target.getAttribute("value"))} >&#128065;</button>
+        <div className="button">
+          <button value="proHeader" onClick={(e) => toggleVisibility(e)} >&#128065;</button>
         </div>
       </div>
     </>

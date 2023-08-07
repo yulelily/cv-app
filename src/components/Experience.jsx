@@ -45,7 +45,7 @@ export default function Experience({experiences, setExperiences}) {
         <h4>Experience</h4>
         <div className="button"><button onClick={() => handleAddBtn()} >+</button></div>
       </div>
-      <div className="list" >
+      <div className="list expHeader" >
         {experiences.map(experience => <Input key={experience.id} curr={experience} handleEditing={(e) => handleEditing(e)} handleRemoveBtn={(e) => handleRemoveBtn(e)} /> )}
       </div>
     </>

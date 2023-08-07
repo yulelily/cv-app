@@ -44,7 +44,7 @@ export default function Education({education, setEducation}) {
         <h4>Education</h4>
         <div className="button"><button onClick={() => handleAddBtn()} >+</button></div>
       </div>
-      <div className="list" >
+      <div className="list eduHeader" >
         {education.map(edu => <Input key={edu.id} curr={edu} handleEditing={(e) => handleEditing(e)} handleRemoveBtn={(e) => handleRemoveBtn(e)} /> )}
       </div>
     </>

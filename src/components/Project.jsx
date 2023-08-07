@@ -41,7 +41,7 @@ export default function Project({projects, setProjects}) {
         <h4>Projects</h4>
         <div className="button"><button onClick={() => handleAddBtn()} >+</button></div>
       </div>
-      <div className="list" >
+      <div className="list proHeader" >
         {projects.map(project => <Input key={project.id} curr={project} handleEditing={(e) => handleEditing(e)} handleRemoveBtn={(e) => handleRemoveBtn(e)} /> )}
       </div>
     </>

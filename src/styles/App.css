@@ -29,14 +29,14 @@
   padding: 6px;
 }
 
-.button > button {
+/* .button > button {
   display: none;
 }
 
 .button:hover > button,
 .button > button:hover {
   display: inline-block;
-}
+} */
 
 input {
   border: none;
@@ -138,7 +138,4 @@ h4 {
   padding: 0;
   margin: 0;
   line-height: 1.5;
-}
-.hidden{
-  display: none;
 }
