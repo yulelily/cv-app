@@ -69,7 +69,7 @@ input:focus {
 .linkGithub {
   margin: 8px;
   width: 1in;
-  background-color: #e2d3d3;
+  background-color: inherit;
   color: rgb(97, 97, 97);
   font-weight: 700;
   font-size: 1.1rem;
@@ -138,4 +138,7 @@ h4 {
   padding: 0;
   margin: 0;
   line-height: 1.5;
+}
+.hidden{
+  display: none;
 }

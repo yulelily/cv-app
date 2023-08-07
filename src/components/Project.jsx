@@ -37,12 +37,12 @@ export default function Project({projects, setProjects}) {
 
   return (
     <>
-      <div>
+      <div className="proHeader" >
         <h4>Projects</h4>
-        <div className="button"><button onClick={handleAddBtn} >+</button></div>
+        <div className="button"><button onClick={() => handleAddBtn()} >+</button></div>
       </div>
       <div className="list" >
-        {projects.map(project => <Input key={project.id} curr={project} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
+        {projects.map(project => <Input key={project.id} curr={project} handleEditing={(e) => handleEditing(e)} handleRemoveBtn={(e) => handleRemoveBtn(e)} /> )}
       </div>
     </>
   );

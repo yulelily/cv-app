@@ -53,21 +53,21 @@ export default function Print({general, education, experiences, projects}) {
         </div>
       </div>
 
-      <div className="education section" >
+      <div className="education section eduHeader" >
         <p>Education</p>
         <div className="list">
           {education.map(edu => <EduText key={edu.id + 1} curr={edu} /> )}
         </div>
       </div>
 
-      <div className="experience section" >
+      <div className="experience section expHeader" >
         <p>Experience</p>
         <div className="list">
           {experiences.map(experience => <ExpText key={experience.id + 1} curr={experience} />)}
         </div>
       </div>
 
-      <div className="project section" >
+      <div className="project section proHeader" >
         <p>Projects</p>
         <div className="list">
           {projects.map(project => <ProText key={project.id + 1} curr={project} /> )}

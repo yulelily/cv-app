@@ -40,12 +40,12 @@ export default function Education({education, setEducation}) {
 
   return (
     <>
-      <div>
+      <div className="eduHeader" >
         <h4>Education</h4>
-        <div className="button"><button onClick={handleAddBtn} >+</button></div>
+        <div className="button"><button onClick={() => handleAddBtn()} >+</button></div>
       </div>
       <div className="list" >
-        {education.map(edu => <Input key={edu.id} curr={edu} handleEditing={handleEditing} handleRemoveBtn={handleRemoveBtn} /> )}
+        {education.map(edu => <Input key={edu.id} curr={edu} handleEditing={(e) => handleEditing(e)} handleRemoveBtn={(e) => handleRemoveBtn(e)} /> )}
       </div>
     </>
   );
